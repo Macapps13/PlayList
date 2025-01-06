@@ -17,7 +17,6 @@ class Game:
     def __str__(self):
         return f"Name: {self.name}, Genre: {self.genre}, Rating: {self.rating}, Platform: {self.platform}"
 
-    @staticmethod
     def to_dict(self):
         return {
             "name": self.name,
@@ -50,11 +49,13 @@ def create_games():
         print(f"Game '{name}' added successfully!")
     return games
 
+
+
 def save_games(games):
-    games_dict = [game.to_dict() for game in games]
-    with open("games.json", "w") as file:
-        json.dump(games_dict, file)
-    print("Games saved successfully!")
+    with open("games.json", 'w') as file:
+        json.dump([game.to_dict() for game in games], file, indent=4)
+    print(f"Games saved!")
+
 
 def load_games():
     try:
