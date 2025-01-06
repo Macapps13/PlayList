@@ -7,13 +7,14 @@
 # establishing the Game class
 
 class Game:
-    def __init__(self, name, genre, rating):
+    def __init__(self, name, genre, rating, platform):
         self.name = name
         self.genre = genre
         self.rating = rating
+        self.platform - platform
 
     def __str__(self):
-        return f"Name: {self.name}, Genre: {self.genre}, Rating: {self.rating}"
+        return f"Name: {self.name}, Genre: {self.genre}, Rating: {self.rating}, Platform: {self.platform}"
     
 def create_games():
     games = []
@@ -33,7 +34,8 @@ def create_games():
                     ratingValid = True
             except ValueError:
                 print("Rating must be an integer betweem 0 and 10")
-        game = Game(name, genre, rating)
+        platform = input("Enter the platform: ")
+        game = Game(name, genre, rating, platform)
         games.append(game)
         print(f"Game '{name}' added successfully!")
     return games
