@@ -1,0 +1,23 @@
+body{
+    background-color: blanchedalmond;
+    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";  
+    
+}
+
+h1{
+    color: black;
+    font-size: 500%;
+    font-weight: 1000;
+    position:relative;
+    top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+p.today{
+    color: grey;
+    font-size: 130%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
