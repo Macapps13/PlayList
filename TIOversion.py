@@ -22,7 +22,17 @@ def create_games():
         if name.lower() == 'exit':
             break
         genre = input("Enter the game genre: ")
-        rating = input("Enter the game rating: ")
+        ratingValid = False
+        while not ratingValid:
+            rating = input("Enter the game rating: ")
+            try:
+                rating = int(rating)
+                if rating < 0 or rating > 10:
+                    print("Rating must be between 0 and 10")
+                else:
+                    ratingValid = True
+            except ValueError:
+                print("Rating must be an integer betweem 0 and 10")
         game = Game(name, genre, rating)
         games.append(game)
         print(f"Game '{name}' added successfully!")
