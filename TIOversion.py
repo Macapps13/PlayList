@@ -15,6 +15,21 @@ class Game:
     def __str__(self):
         return f"Name: {self.name}, Genre: {self.genre}, Rating: {self.rating}"
     
-game1 = Game("The Witcher 3", "RPG", 10)
+def create_games():
+    games = []
+    while True:
+        name = input("Enter the game name (or type 'exit' to stop): ")
+        if name.lower() == 'exit':
+            break
+        genre = input("Enter the game genre: ")
+        rating = input("Enter the game rating: ")
+        game = Game(name, genre, rating)
+        games.append(game)
+        print(f"Game '{name}' added successfully!")
+    return games
 
-print(game1)
+# Example usage
+if __name__ == "__main__":
+    games_list = create_games()
+    for game in games_list:
+        print(game)
