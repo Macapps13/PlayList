@@ -68,13 +68,23 @@ def load_games():
         print("No games found!")
         return []
     except json.JSONDecodeError:
-        print("Error loading games! File may be corrupted, or empty. Restarting list")
         return []
 
 # Example usage
 if __name__ == "__main__":
 
-    games_list = load_games()
+    clearDecision = input("Would you like to clear the list of games? (y/n): ")
+    if clearDecision.lower() == 'y':
+        with open("games.json", 'w') as file:
+            file.write("[]")
+        print("Games list cleared!")
+        games_list = []
+    else:
+        games_list = load_games()
+    
+    
+    
+    
 
     new_games = create_games()
     games_list.extend(new_games)
