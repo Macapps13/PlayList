@@ -23,8 +23,19 @@ class Game:
             "platform": self.platform
         }
 
-app = ctk.CTk()
-app.geometry("600x400")
-app.title("PlayList")
+class App(ctk.CTk):
+    def __init__(self):
+        super().__init__()
+        self.geometry("600x500")
+        self.title("PlayList")
+        font = ctk.CTkFont(family="Helvetica", size=15)
 
+        self.button = ctk.CTkButton(self, text="Add Game", command=self.add_game, font=font)
+        self.button.grid(row=0, column=0, padx=20, pady=20)
+
+    def add_game(self):
+        print("add game")
+
+
+app = App()
 app.mainloop()
