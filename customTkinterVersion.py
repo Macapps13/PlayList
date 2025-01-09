@@ -37,7 +37,7 @@ class App(ctk.CTk):
         
 
         self.button = ctk.CTkButton(self, text="Add Game", command=self.add_game, font=font)
-        self.button.grid(row=1, column=0, padx=20, pady=(20))
+        self.button.grid(row=1, column=0, padx=20, pady=20)
 
     def add_game(self):
         print("add game")
