@@ -27,11 +27,17 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
         self.geometry("600x500")
+        self.maxsize(600, 500)
         self.title("PlayList")
+        self.grid_columnconfigure(0, weight=1)
         font = ctk.CTkFont(family="Helvetica", size=15)
 
+        self.label = ctk.CTkLabel(self, text="PlayList", font=ctk.CTkFont(family="Helvetica", size=30))
+        self.label.grid(row=1, column=0, padx=20, pady=20, sticky="ew")
+        
+
         self.button = ctk.CTkButton(self, text="Add Game", command=self.add_game, font=font)
-        self.button.grid(row=0, column=0, padx=20, pady=20)
+        self.button.grid(row=1, column=0, padx=20, pady=(20))
 
     def add_game(self):
         print("add game")
